@@ -41,12 +41,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTableModule } from '@angular/material/table';
+import { FilterSearchAirportComponent } from './filter-search-airport/filter-search-airport.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
-    SearchAirportComponent
+    SearchAirportComponent,
+    FilterSearchAirportComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,18 @@
+
 .container {
-    display: flex;
-    text-align: center;
+    display: flex; 
+    flex-direction: column;
     padding-top: 10%;
+    text-align: center;
   }
 
-.form-container{
-    width: 100%;
+
+.filterSearchAiportClass{
+    order: 1;
+}
+
+.searchAiportClass{
+    order: 2;
 }
 
 .form-element{
