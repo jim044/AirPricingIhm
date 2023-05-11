@@ -1,5 +1,30 @@
 <div class="container">
-    <form [formGroup]="searchFlightGroup">
-        <input class="effect-1" type="text" placeholder="Parent Input" formControlName="parent" />
-    </form>
+    <form [formGroup]="searchFlightformGroup" (ngSubmit)="onSubmit(searchFlightformGroup.value)" class="form-container">
+
+        <mat-form-field class="form-element">
+          <input matInput placeholder="Aéroport de départ" formControlName="flightStart">
+        </mat-form-field>
+    
+        <mat-form-field class="form-element">
+          <input matInput placeholder="Aéroport d'arrivé" formControlName="flightEnd">
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <mat-date-range-input [formGroup]="rangeDate" [rangePicker]="picker">
+              <input matStartDate formControlName="start" placeholder="Date de départ">
+              <input matEndDate formControlName="end" placeholder="Date de retour">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          
+            <mat-error *ngIf="rangeDate.controls['start'].hasError('matStartDateInvalid')">Invalid start date</mat-error>
+            <mat-error *ngIf="rangeDate.controls['end'].hasError('matEndDateInvalid')">Invalid end date</mat-error>
+          </mat-form-field>
+        
+        <div class="form-element">
+          <button mat-raised-button color="warn" type="submit" class="button">Rechercher</button>
+        </div>
+
+    
+      </form>
 </div>

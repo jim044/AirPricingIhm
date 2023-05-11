@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    text-align: center;
+    padding-top: 10%;
+  }
+
+.form-container{
+    width: 100%;
+}
+
+.form-element{
+    padding-left: 2%;
+}

@@ -8,18 +8,30 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./search-airport.component.css']
 })
 export class SearchAirportComponent implements OnInit, OnDestroy {
-  searchFlightGroup!: FormGroup;
 
-  constructor(private fb: FormBuilder){
-   
-  }
+  searchFlightformGroup!: FormGroup;
+  rangeDate!: FormGroup;
+
+  constructor(private fb: FormBuilder){}
 
   ngOnInit(): void {
-    this.searchFlightGroup = this.fb.group({
-      parent: ['', Validators.required]
+    this.rangeDate = new FormGroup({
+      start: new FormControl<Date | null>(null),
+      end: new FormControl<Date | null>(null),
     });
+    
+    this.searchFlightformGroup = this.fb.group({
+      flightStart: ['', Validators.required],
+      flightEnd: ['', Validators.required],
+    });
+
+    
   }
   ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  onSubmit(arg0: any) {
     throw new Error('Method not implemented.');
   }
  
