@@ -10,20 +10,19 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class SearchAirportComponent implements OnInit, OnDestroy {
 
   searchFlightformGroup!: FormGroup;
-/*   rangeDate!: FormGroup;
- */
+  selectedDefaultWay: string = 'withReturn';
+  selectedDefaultConfort: string = 'economic';
+  
   constructor(private fb: FormBuilder){}
 
   ngOnInit(): void {
-/*     this.rangeDate = new FormGroup({
-      start: new FormControl<Date | null>(null),
-      end: new FormControl<Date | null>(null),
-    }); */
+
     
     this.searchFlightformGroup = this.fb.group({
       flightStart: ['', Validators.required],
       flightEnd: ['', Validators.required],
       filterWayControl: ['', Validators.required],
+      filterConfortControl: ['', Validators.required],
       rangeDate : this.fb.group({
         start: ['', Validators.required],
         end: ['', Validators.required],

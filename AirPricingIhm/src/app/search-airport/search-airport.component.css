@@ -24,3 +24,10 @@
     padding-left: 2%;
     width: 10%;
 }
+
+::ng-deep .container {
+    .mat-mdc-text-field-wrapper {
+      /*change color of underline when focused*/
+      background-color: rgb(168, 167, 167) !important;
+    }
+  }

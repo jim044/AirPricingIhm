@@ -4,19 +4,19 @@
     <div class="filterSearchAiportClass">      
       <mat-form-field appearance="fill" class="form-element-filter">
         <mat-label>Direction</mat-label>
-        <mat-select formControlName="filterWayControl">
-          <mat-option value="primary">Aller simple</mat-option>
-          <mat-option value="primary">Aller-retour</mat-option>
+        <mat-select [(ngModel)]="selectedDefaultWay" formControlName="filterWayControl">
+          <mat-option value="withoutReturn">Aller simple</mat-option>
+          <mat-option value="withReturn">Aller-retour</mat-option>
         </mat-select>
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="form-element-filter">
         <mat-label>Confort</mat-label>
-        <mat-select formControlName="filterWayControl">
-          <mat-option value="primary">Economique</mat-option>
-          <mat-option value="primary">Economique supérieure</mat-option>
-          <mat-option value="primary">Affaires</mat-option>
-          <mat-option value="primary">Première</mat-option>
+        <mat-select [(ngModel)]="selectedDefaultConfort" formControlName="filterConfortControl">
+          <mat-option value="economic">Economique</mat-option>
+          <mat-option value="economicSup">Economique supérieure</mat-option>
+          <mat-option value="business">Affaires</mat-option>
+          <mat-option value="first">Première</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -27,7 +27,7 @@
       </mat-form-field>
 
       <mat-form-field class="form-element">
-        <input matInput placeholder="Aéroport d'arrivé" formControlName="flightEnd">
+        <input matInput placeholder="Aéroport d'arrivée" formControlName="flightEnd">
       </mat-form-field>
 
       <mat-form-field class="form-element">
