@@ -2,7 +2,7 @@
 .container {
     display: flex; 
     flex-direction: column;
-    padding-top: 10%;
+    padding-top: 5%;
     text-align: center;
   }
 
@@ -17,4 +17,10 @@
 
 .form-element{
     padding-left: 2%;
+    width: 20%;
+}
+
+.form-element-filter{
+    padding-left: 2%;
+    width: 10%;
 }
